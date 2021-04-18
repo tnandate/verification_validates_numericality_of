@@ -1,7 +1,8 @@
 require "test_helper"
 
 class ProductTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def test_only_integer
+    @product = Product.new(amount: Date.current)
+    assert_not @product.valid?
+  end
 end
